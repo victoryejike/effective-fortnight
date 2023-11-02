@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
 import { Environment, Center } from "@react-three/drei";
@@ -8,16 +9,16 @@ import Backdrop from "./Backdrop";
 
 const CanvasModel = () => {
   return (
-    <Canvas>
+    <Canvas shadows camera={{ position: [0, 0, 0], fov: 25 }}>
       <ambientLight intensity={0.5} />
       <Environment preset="city" />
 
-      {/* <CameraRig> */}
-      {/* <Backdrop /> */}
-      <Center>
-        <Shirt />
-      </Center>
-      {/* </CameraRig> */}
+      <CameraRig>
+        <Backdrop />
+        <Center>
+          <Shirt />
+        </Center>
+      </CameraRig>
     </Canvas>
   );
 };
